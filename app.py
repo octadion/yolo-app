@@ -34,4 +34,4 @@ def api_image_detection():
     return send_file(output_filename, mimetype='image/jpeg')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8001')
+    app.run(host='0.0.0.0', port='8002')
