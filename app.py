@@ -29,8 +29,10 @@ def api_image_detection():
     filename = secure_filename(file.filename)
     file.save(filename)
 
-    output_filename = 'output/' + filename  # Define your output path here
-    output_filename = image_detection(filename, output_filename)
+    image = image_detection(filename)
+    output_filename = 'output/' + filename
+    cv2.imwrite(output_filename, image)
+
     return send_file(output_filename, mimetype='image/jpeg')
 
 if __name__ == '__main__':
